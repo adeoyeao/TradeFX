@@ -42,4 +42,5 @@ nextApp.prepare().then(() => {
 
       app.listen(PORT, () => `Server is running on port ${PORT}`)
 })
+.catch(err => console.error(err))
 

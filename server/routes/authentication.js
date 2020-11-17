@@ -33,6 +33,29 @@ passport.use(deserializeUser((id, done) => {
       })
 }))
 
+router.post("/login", (req, res) => {
+      const user = {
+            username: req.body.username,
+            password: req.body.password,
+      }
+
+      req.login(user, err => {
+            err ? (console.error(err), res.json({message: "Login Failed"})) :
+            passport.authenticate("local")((req, res) => {
+                  res.json({message: "Login Succesful"})
+            })
+      })
+})
+
+router.post("/register", (req, res) => {
+      userModel.register({username: req.body.usernname}, req.body.password, (err, user) => {
+            err ? (console.error(err), res.json({message: "Registration Failed"})) :
+            passport.authenticate("local")((req, res) => {
+                  res.json({ message: "Registration Successful"})
+            })
+      })
+})
+
 // Facebook Authentication
 passport.use(new FacebookStrategy({
     clientID: FACEBOOK_APP_ID,
@@ -99,5 +122,5 @@ router.get("/auth/linkedin/login",
 // Logout
 router.get("/logout", (req, res) => {
       req.logout()
-      res.redirect("/")
+      res.end()
 })

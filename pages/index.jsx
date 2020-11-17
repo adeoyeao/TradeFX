@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react"
 import styles from "../styles/layouts/index.module.scss"
+
+import Logo from "../components/Logo"
+import LoginForm from "../components/LoginForm"
  
 const Index = () => {
       const [ viewHeight, setViewHeight ] = useState("100vh")
@@ -23,7 +26,8 @@ const Index = () => {
       return (
             <main style={mainStyle} className={styles.index}>
                   <section>
-                        Login
+                        <Logo />
+                        <LoginForm />
                   </section>
             </main>
       )

@@ -1,0 +1,13 @@
+.logo {
+      grid-row: 1/2;
+      grid-column: 1/2;
+      animation: fade 3s linear forwards;
+}
+
+@keyframes fade {
+      to {
+            transform: translateY(-100%);
+            opacity: 0;
+            display: none;
+      }
+}

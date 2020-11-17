@@ -1,0 +1,22 @@
+.oauth {
+      width: 4rem;
+      height: 4rem;
+      border-radius: 50%;
+      border: 2px solid rgba(240, 248, 255, 0.75);
+      appearance: none;
+      outline: none;
+      cursor: pointer;
+      // margin: 0 0.25rem;
+
+      &:nth-of-type(1) {
+            background: #3B5998;
+      }
+
+      &:nth-of-type(2) {
+            background: #0072b1;
+      }
+
+      &:nth-of-type(3) {
+            background: #de5246;
+      }
+}

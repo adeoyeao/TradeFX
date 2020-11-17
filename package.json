@@ -7,7 +7,6 @@
     "dev": "nodemon server/app.js",
     "build": "next build",
     "start": "NODE_ENV=production node server/app.js"
-
   },
   "repository": {
     "type": "git",
@@ -21,6 +20,8 @@
   },
   "homepage": "https://github.com/adeoyeao/TradeFX#readme",
   "dependencies": {
+    "@material-ui/core": "^4.11.0",
+    "@material-ui/icons": "^4.9.1",
     "express": "^4.17.1",
     "express-session": "^1.17.1",
     "mongoose": "^5.10.14",

@@ -28,13 +28,13 @@ nextApp.prepare().then(() => {
 
       const allowAccess = (req, res, next) => {
             if(req.isAuthenticated) {
-                  res.redirect("/tradefx")
+                  res.redirect("/home")
                   next()
             }
       }
 
-      app.use("/tradefx", restrictAccess)
-      app.use(/^\/$/ig, allowAccess)
+      app.use("/home", restrictAccess)
+      app.use(/^\/$/, allowAccess)
 
       app.get("*", (req, res) => {
             return handle(req, res)
